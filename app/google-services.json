@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874059046061",
+    "project_id": "revivemedicineapp",
+    "storage_bucket": "revivemedicineapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874059046061:android:a80ddad353513a5cf2ba24",
+        "android_client_info": {
+          "package_name": "com.revive.medicinereminder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKAgq4Mwfmbk3SMS-Ea6jxLSZ9LHdFrso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,72 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Camera Permissions -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Permissions for Storage (for saving images) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" android:required="false"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" android:required="false"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" android:required="false"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_IMAGES" android:required="false"/>
+
+    <!-- Alarm Permission (for Android 12+) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <!-- Camera Feature declaration -->
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+
+    <application
+        android:icon="@mipmap/ic_launcher_roundapp"
+        android:roundIcon="@mipmap/ic_launcher_roundapp"
+        android:label="@string/app_name"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Revive"
+        tools:targetApi="36">
+
+        <!-- Launcher Activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Other Activities -->
+        <activity android:name=".SignupActivity" android:exported="true"/>
+        <activity android:name=".DashboardActivity" android:exported="true"/>
+        <activity android:name=".MedicineReminderActivity" android:exported="true"/>
+        <activity android:name=".AddMedicineActivity" android:exported="true"/>
+        <activity android:name=".ViewMedicinesActivity" android:exported="true"/>
+        <activity android:name=".StockTrackerActivity" android:exported="true"/>
+        <activity android:name=".ScannerActivity" android:exported="true"/>
+        <activity android:name=".SettingsActivity" android:exported="false"/>
+
+        <!-- Alarm Broadcast Receivers -->
+        <receiver
+            android:name=".MedicineReminderReceiver"
+            android:enabled="true"
+            android:exported="false" />
+        <receiver
+            android:name=".AlarmReceiver"
+            android:exported="true" />
+        <receiver
+            android:name=".NotificationActionReceiver"
+            android:exported="true" />
+        <receiver
+            android:name=".TakenReceiver"
+            android:exported="true" />
+        <receiver
+            android:name=".DismissReceiver"
+            android:exported="true" />
+
+    </application>
+
+</manifest>
